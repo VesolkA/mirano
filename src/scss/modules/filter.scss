@@ -7,7 +7,6 @@
         justify-content: space-between;
         align-items: center;
         gap: 30px;
-
     }
 
     &__group {
@@ -17,7 +16,7 @@
         margin: 0;
         gap: 12px;
 
-        &_choices {
+        &-choices {
             gap: 64px;
         }
     }
@@ -30,7 +29,6 @@
     &__label {
         border-radius: 300px;
         padding: 24px 16px 24px 60px;
-        // padding-left: 60px;
         background-color: $white;
         font-family: $font-family;
         color: $dark;
@@ -39,15 +37,15 @@
         background-size: 40px;
         cursor: pointer;
 
-        &_flower {
+        &-flower {
             background-image: url('/img/bouquet-flowers.png');
         }
 
-        &_toys {
+        &-toys {
             background-image: url('/img/bear-toy.png');
         }
 
-        &_postcard {
+        &-postcard {
             background-image: url('/img/postcard.png');
         }
 
@@ -67,19 +65,27 @@
 
     }
 
-    &__choices {}
+    // &__choices {}
 
     &__select {
         display: flex;
         align-items: center;
         gap: 8px;
+
+        &:after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: url('/img/arrow.svg') no-repeat center/contain;
+            transform: scale(-1);
+        }
     }
 
-    &__input-price {}
+    // &__input-price {}
 
-    &__type-list {}
+    // &__type-list {}
 
-    &__type-item {}
+    // &__type-item {}
 
-    &__type-button {}
+    // &__type-button {}
 }

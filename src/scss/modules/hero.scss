@@ -33,7 +33,7 @@
         color: $dark;
     }
 
-    &__group_images {
+    &__group-images {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -43,13 +43,13 @@
     &__image {
         object-fit: contain;
 
-        &_left {
+        &-left {
             border-radius: 400px 400px 400px 0;
             width: calc(284 / 1300 * 100%);
             
         }
 
-        &_right {
+        &-right {
             border-radius: 400px 0 400px 400px;
             width: calc(284 / 1300 * 100%);
         }
