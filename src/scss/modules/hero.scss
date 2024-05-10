@@ -1,7 +1,15 @@
 @use '../variables' as *;
+@use '../media' as *;
 
 .hero {
     padding: 60px 0;
+
+    @include tablet {
+        padding: 40px 0;
+    }
+    @include tablet {
+        padding-bottom: 70px;
+    }
 
     &__headgroup {
         margin-bottom: 24px;
@@ -14,41 +22,62 @@
         text-transform: uppercase;
         text-align: center;
         color: $green;
-        font-size: clamp(
-                80px,
-                calc(80px + (40 * ((100vw - 1024px) / (1440 - 1024)))),
-                120px);
+        @include responsive-font-size(80, 120, 1024, 1440);
+
+        @include laptop {
+            @include responsive-font-size(58, 80, 768, 1024);
+        }
+        @include tablet {
+            @include responsive-font-size(40, 58, 320, 768);
+        }
     }
 
     &__subtitle {
         font-family: $second-family;
         font-style: italic;
         font-weight: 400;
-        font-size: clamp(
-            32px,
-            calc(32px + (8 * ((100vw - 1024px) / (1440 - 1024)))),
-            40px);
+        @include responsive-font-size(32, 40, 1024, 1440);
         line-height: 1.3;
         text-align: right;
         color: $dark;
+        @include laptop {
+            @include responsive-font-size(24, 32, 768, 1024);
+        }
+        @include tablet {
+            @include responsive-font-size(18, 24, 320, 768);
+        }
     }
 
     &__group-images {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 26px;
+        gap: calc(24 / 1300 * 100%);
+        @include laptop {
+            gap: 18px;
+        }
+        @include tablet {
+            gap: 12px;
+        }
+        @include mobile {
+            gap: 5px;
+        }
+
     }
 
     &__image {
         object-fit: contain;
+        // width: calc(284 / 1300 * 100%);
+        // aspect-ratio: 284 / 352;
 
         &-left {
             border-radius: 400px 400px 400px 0;
             width: calc(284 / 1300 * 100%);
-            
         }
-
+        // &-center {
+        //     width: calc(680 / 1300 * 100%);
+        //     aspect-ratio: 680 / 588;
+        // }
         &-right {
             border-radius: 400px 0 400px 400px;
             width: calc(284 / 1300 * 100%);

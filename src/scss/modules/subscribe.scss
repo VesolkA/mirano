@@ -1,8 +1,14 @@
 @use '../variables' as *;
+@use '../media' as *;
 
 .subscribe {
     padding-top: 80px;
     padding-bottom: 140px;
+
+    @include tablet {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
 
     &__tiile {
         font-weight: 400;
@@ -13,6 +19,10 @@
         color: $green;
         font-family: $second-family;
         margin-bottom: 40px;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
 
     }
 

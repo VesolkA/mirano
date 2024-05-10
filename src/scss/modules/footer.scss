@@ -1,16 +1,28 @@
 @use '../variables' as *;
+@use '../media' as *;
 
 .footer {
     background: $footer url('/img/figure0.svg') no-repeat;
     background-position: bottom;
-    background-size: contain;
+    background-size: 100%;
     padding: 80px 0;
+    @include fullscreen {
+        background-size: cover;
+        background-size: auto 72%;
+    }
+    @include mobile {
+        background-size: auto 78%;
+    }
 
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 60px;
+
+        @include tablet {
+            gap: 40px;
+        }
     }
 
     &__logo {

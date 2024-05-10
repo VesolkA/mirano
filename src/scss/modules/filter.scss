@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../media' as *;
 
 .filter {
 
@@ -6,11 +7,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 30px;
+        gap: 32px;
+        flex-wrap: wrap;
     }
 
     &__group {
         display: flex;
+        flex-wrap: wrap;
         border: 0;
         padding: 0;
         margin: 0;
@@ -18,6 +21,10 @@
 
         &-choices {
             gap: 64px;
+
+            @include mobile {
+                gap: 40px;
+            }
         }
     }
 
@@ -36,6 +43,12 @@
         background-repeat: no-repeat;
         background-size: 40px;
         cursor: pointer;
+
+        @include mobile {
+            padding: 11px 12px 11px 40px;
+            background-size: 24px;
+            background-position: center left 12px;
+        }
 
         &-flower {
             background-image: url('/img/bouquet-flowers.png');
@@ -80,7 +93,12 @@
             transform: scale(-1);
         }
     }
+    // &__price {
 
+    // }
+    // &__choices-box {
+
+    // }
     // &__input-price {}
 
     // &__type-list {}
