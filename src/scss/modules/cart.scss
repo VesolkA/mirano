@@ -1,0 +1,113 @@
+@use '../variables' as *;
+@use '../media' as *;
+
+.cart {
+    padding-top: 100px;
+
+    &__container {
+        border-radius: 32px;
+        padding: 24px 16px;
+        max-width: 310px;
+        background-color: $white;
+    }
+
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 28px;
+    }
+
+    // &__close {
+    // }
+
+    &__date-delivery {
+        padding-left: 20px;
+        background-image: url("/img/delivery.svg");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        font-size: 14px;
+        margin-bottom: 16px;
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+
+    &__list {}
+
+    &__item {
+        display: grid;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba($dark, .04);
+        grid-template-columns: 72px 1fr min-content;
+        gap: 8px 12px;
+        grid-template-areas:
+            "image title title"
+            "image counter price";
+    }
+
+    &__image {
+        width: 72px;
+        max-height: 72px;
+        border-radius: 12px;
+        grid-area: image;
+    }
+
+    &__item-title {
+        grid-area: title;
+        font-weight: 400;
+        font-size: 14px;
+
+    }
+
+    &__counter {
+        grid-area: counter;
+        max-width: 89px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__counter-btn {
+        border-radius: 6px;
+        width: 29px;
+        height: 29px;
+        background: $bg;
+    }
+
+    &__counter-input {
+        max-width: 32px;
+        border: none;
+        text-align: center;
+    }
+
+    &__price {
+        grid-area: price;
+        align-self: end;
+        line-height: 1.3;
+        text-align: right;
+    }
+
+    &__footer {
+        padding-top: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+            align-self: center;
+        }
+    }
+
+    &__order-btn {
+        border-radius: 32px;
+        padding: 8px 16px;
+        background-color: $light-orange;
+        color: $white;
+    }
+}

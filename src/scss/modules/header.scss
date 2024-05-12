@@ -1,8 +1,25 @@
 @use '../variables' as *;
 @use '../media' as *;
 
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
 .header {
     padding: 32px 0;
+
+    &_fixed {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        right: 0;
+        z-index: 998;
+        box-shadow: 0 4px 2px -2px $footer;
+        background-color: $bg;
+        animation: slideDown 0.4s forwards;
+    }
 
     @include mobile {
         padding: 24px 0;
@@ -51,6 +68,16 @@
         border-radius: 32px;
         padding: 8px 56px 8px 16px;
         border: none;
+        &:focus-visible {
+            outline: 2px solid $light-orange;
+        }
+        &:hover {
+            background: $footer;
+        }
+        &:checked {
+            background-color: $light-orange;
+            color: $white;
+        }
 
         &::placeholder {
             color: rgba($dark, 0.3);
