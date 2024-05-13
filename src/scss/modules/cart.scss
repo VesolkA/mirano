@@ -46,7 +46,6 @@
         }
     }
 
-
     &__header {
         display: flex;
         align-items: center;
@@ -66,7 +65,7 @@
         transition: transform 0.3s ease;
         &:hover {
             transform: rotate(360deg); 
-          }
+        }
     }
 
     &__date-delivery {
